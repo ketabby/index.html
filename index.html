@@ -3,21 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Link to Section</title>
+  <title>Interactive Sections</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      scroll-behavior: smooth; /* Enables smooth scrolling */
+      scroll-behavior: smooth;
     }
 
     section {
       height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      padding: 20px;
       border: 1px solid #ccc;
+      overflow: auto;
     }
 
     nav {
@@ -29,6 +28,7 @@
       color: white;
       padding: 10px 0;
       text-align: center;
+      z-index: 1000;
     }
 
     nav a {
@@ -40,25 +40,86 @@
     nav a:hover {
       text-decoration: underline;
     }
+
+    form {
+      margin-top: 20px;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    form input, form select, form textarea, form button {
+      margin-bottom: 15px;
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    form button {
+      width: auto;
+      background-color: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: #555;
+    }
   </style>
 </head>
 <body>
   <nav>
-    <a href="#section1">Section 1</a>
-    <a href="#section2">Section 2</a>
-    <a href="#section3">Section 3</a>
+    <a href="#elementary">Elementary</a>
+    <a href="#intermediate">Intermediate</a>
+    <a href="#secondary">Secondary</a>
   </nav>
 
-  <section id="section1" style="background-color: #f9c2ff;">
-    <h1>Welcome to Section 1</h1>
+  <section id="elementary" style="background-color: #f9c2ff;">
+    <h1>Welcome to Elementary</h1>
+    <form>
+      <label for="name">What is your name?</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name">
+
+      <label for="age">How old are you?</label>
+      <input type="number" id="age" name="age" placeholder="Enter your age">
+
+      <button type="submit">Submit</button>
+    </form>
   </section>
 
-  <section id="section2" style="background-color: #a2d2ff;">
-    <h1>Welcome to Section 2</h1>
+  <section id="intermediate" style="background-color: #a2d2ff;">
+    <h1>Welcome to Intermediate</h1>
+    <form>
+      <label for="favorite-subject">What is your favorite subject?</label>
+      <select id="favorite-subject" name="favorite-subject">
+        <option value="math">Math</option>
+        <option value="science">Science</option>
+        <option value="history">History</option>
+        <option value="english">English</option>
+      </select>
+
+      <label for="hobbies">What are your hobbies?</label>
+      <textarea id="hobbies" name="hobbies" rows="4" placeholder="Describe your hobbies"></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
   </section>
 
-  <section id="section3" style="background-color: #bde0fe;">
-    <h1>Welcome to Section 3</h1>
+  <section id="secondary" style="background-color: #bde0fe;">
+    <h1>Welcome to Secondary</h1>
+    <form>
+      <label for="career-goals">What are your career goals?</label>
+      <textarea id="career-goals" name="career-goals" rows="4" placeholder="Describe your career goals"></textarea>
+
+      <label for="preferred-university">What is your preferred university?</label>
+      <input type="text" id="preferred-university" name="preferred-university" placeholder="Enter university name">
+
+      <button type="submit">Submit</button>
+    </form>
   </section>
 </body>
 </html>
